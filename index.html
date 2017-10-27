@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<!-- jquery library -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+  <!-- Bootstrap stylesheet -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <!-- extra style -->
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <!-- Firebase  -->
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyByWTmqM7_8TfNxDzGe5dskTjYl5R84NdA",
+    authDomain: "train-schedule-d6927.firebaseapp.com",
+    databaseURL: "https://train-schedule-d6927.firebaseio.com",
+    projectId: "train-schedule-d6927",
+    storageBucket: "train-schedule-d6927.appspot.com",
+    messagingSenderId: "132794670641"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  <!-- MomentJS Library -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
+
+ 
+
+  <title>Train Scheduler Activity</title>
+
+</head>
+
+<body class="bg">
+  
+  <div class="col-sm-8">
+    <h1>Train Scheduler</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card ">
+          <div class="card-header">
+            Current Train Schedule
+          </div>
+          <table class="table">
+            <tbody id="train-output">
+              <thead>
+                <tr><td><strong>Train Name</strong></td><td><strong>Destination</strong></td><td><strong>Frequency (min)</strong></td><td><strong>Next Arrival</strong></td><td><strong>Minutes Away</strong></td></tr>
+              </thead>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="list-group active">
+          <div class="list-group-item active ">
+            Add Train
+          </div>
+          <div class="list-group active">
+            <form id="train-input">
+              <div class="list-group-item active">
+                <label>Train Name</label>
+                <input id="train-route" class="form-control" type="text" placeholder="Route Name" />
+              </div>
+              <div class="list-group-item active">
+                <label>Destination</label>
+                <input id="destination" class="form-control" type="text" placeholder="Destination Name"/>
+              </div>
+              <div class="list-group-item active">
+                <label>First Train Time (military time)</label>
+                <input id="train-arrival" class="form-control" type="text" placeholder="00:00"/>
+              </div>
+              <div class="list-group-item active">
+                <label>Frequency (in minutes)</label>
+                <input id="frequency" class="form-control" type="text" placeholder="Duration between Trains"/>
+              </div>
+              <div class="list-group-item active">
+                <input type="submit" value-"Submit" class="btn btn-dark"/>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="assets/logic.js"></script>
+
+</body>
+
+</html>
