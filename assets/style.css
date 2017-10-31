@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+}
+
+h1 {
+	font-family: arial;
+	color: #ffffff;
+	text-align: center;
+	font-weight: bolder;
+}
+.bg { 
+    
+    background-image: url("http://eskipaper.com/images/beautiful-train-track-wallpaper-1.jpg");
+
+    
+    height: 100%; 
+
+   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
